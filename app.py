@@ -13,7 +13,10 @@ DB_HOST = 'localhost'
 DB_USERNAME = 'root'
 DB_NAME = 'flask_db'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{DB_USERNAME}@{DB_HOST}:3306/{DB_NAME}'
+DB_MYSQL = f'mysql+pymysql://{DB_USERNAME}@{DB_HOST}:3306/{DB_NAME}'
+DB_POSTGRES = f'postgresql://{DB_USERNAME}@{DB_HOST}:5432/{DB_NAME}'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = DB_MYSQL
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
